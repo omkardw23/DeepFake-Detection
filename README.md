@@ -1,10 +1,16 @@
-# DeepFake
-Deepfake techniques, which present realistic AI-generated videos of people doing and saying fictional things,  have the potential to have a significant impact on how people determine the legitimacy of information presented online.  
-These content generation and modification technologies may affect the quality of public discourse and the safeguarding of  human rights—especially given that deepfakes may be used maliciously as a source of misinformation, manipulation, harassment, and  persuasion.  Identifying such manipulated media is of paramount importance in today's cyberspace.   
+# DeepFake Hunter : 
+
+![](https://github.com/omkardw23/DeepFake-Detection/blob/master/Images%20for%20readme/fake_image_title.jpg)
+
+# (I) Abstract : 
+
+Deepfake techniques, which present realistic AI-generated videos of people doing and saying fictional things,  have the potential to have a significant impact on how people determine the legitimacy of information presented online. These content generation and modification technologies may affect the quality of public discourse and the safeguarding of  human rights—especially given that deepfakes may be used maliciously as a source of misinformation, manipulation, harassment, and  persuasion.  Identifying such manipulated media is of paramount importance in today's cyberspace.  
+
+# (II) Dataset Used : 
 
 The dataset is available on Kaggle:
 
-https://www.kaggle.com/c/deepfake-detection-challenge/data
+**https://www.kaggle.com/c/deepfake-detection-challenge/data**
 
 
 Special thanks to courses offered by deeplearning.ai and SuperDataScience, for furnishing many valuable insights.
