@@ -8,12 +8,17 @@ Deepfake techniques, which present realistic AI-generated videos of people doing
 
 # (II) Dataset Used : 
 
-The dataset is available on Kaggle:
+The data is comprised of .mp4 files, split into compressed sets of ~10GB apiece. A metadata.json accompanies each set of .mp4 files, and contains filename, label (REAL/FAKE), original and split columns, listed below under Columns. We will be predicting whether or not a particular video is a deepfake. A deepfake could be either a face or voice swap (or both). In the training data, this is denoted by the string "REAL" or "FAKE" in the label column. In your submission, you will predict the probability that the video is a fake.
+
+Kaggle's dataset link : 
 
 **https://www.kaggle.com/c/deepfake-detection-challenge/data**
 
+The dataset composed of about : 
+* Number of training video samples : **401**
+* Number of testing video samples : **400**
 
-Special thanks to courses offered by deeplearning.ai and SuperDataScience, for furnishing many valuable insights.
+Total size ~ 470 GB
 
 (I) General-Image-Processing module : 
 ------------------------------------------
