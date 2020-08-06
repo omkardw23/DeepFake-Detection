@@ -20,20 +20,20 @@ Dataset summary :
 
 Total size ~ 470 GB
 
-![](https://github.com/omkardw23/DeepFake-Detection/blob/master/Images%20for%20readme/Deepfake%20Detection%20Challenge%20-%20Kaggle.mp4)
+# Modules Used In Short : 
 
-(I) General-Image-Processing module : 
-------------------------------------------
-This notebook was created to implement the code trying to extract the face/s using Viola Jones algorithm, that is by using Haar cascades designed in OpenCV. The haarcascade can be downloaded from :
-https://github.com/opencv/opencv/tree/master/data/haarcascades 
-or 
-are available in Kaggle's data repository as well. Using the pre-defined openCV functions we were able to detect the faces successfully. 
+## (I) General-Image-Processing module : 
+
+This notebook was created to implement the code trying to extract the face/s using Viola Jones algorithm, that is by using **Haar cascades designed in OpenCV**. The haarcascade can be downloaded from :
+
+**https://github.com/opencv/opencv/tree/master/data/haarcascades**
+
+or are available in Kaggle's data repository as well. Using the pre-defined openCV functions we were able to detect the faces successfully. 
 Moreover, the code also contains necessary function defined from graying the cropped face image/s, and histogram equalizing it(in order to spread the intensity near uniformly across the gray value range). Moreover, to analyze the frequencies present, a 2D DFT was also computed. 
 
-(II) Model 1 :
-----------------
-----------------
-MTCNN :
+## (II) Model 1 :
+
+## MTCNN :
 --------
 MTCNN (Multi-task Cascaded Convolutional Neural Networks) is an algorithm consisting of 3 stages, which detects the bounding 
 boxes of faces in an image along with their 5 Point Face Landmarks. Each stage gradually improves the detection results by passing it’s inputs through a CNN, which returns candidate bounding boxes with their scores, followed by non max suppression.
@@ -41,13 +41,11 @@ boxes of faces in an image along with their 5 Point Face Landmarks. Each stage g
 In stage 1 the input image is scaled down multiple times to build an image pyramid and each scaled version of the image is passed through it’s CNN. In stage 2 and 3 we extract image patches for each bounding box and resize them (24x24 in stage 2 and 48x48 in stage 3) and forward them through the CNN of that stage. Besides bounding boxes and scores, stage 3 additionally computes 5 face landmarks points for each bounding box. 
 
 
-Mesonet : 
---------------------------
+## Mesonet : 
 MesoNet is based on mesoscopic level of analysis. It is a Convolutional Neural Network architecture, used to detect forged images (DeepFakes and Face-to-Face). There are two variants- Meso-4 and MesoInception-4. MesoInception-4 is obtained by replacing the first two convolutional layers of the Meso-4 architecture by the famous Inception module proposed by Szegedy et al. in Going deeper with convolutions. Cvpr, 2015.
 ( https://www.researchgate.net/publication/327435226_MesoNet_a_Compact_Facial_Video_Forgery_Detection_Network )
 
-## Pipeline :
-----------------
+# Pipeline :
 The process is to input the video train/test files directly and extracting multiple frames from the video files. After each frame is extracted we use face detection libraries like face_recognition and MTCNN to extract the regions in the frame which contain faces. We then generate batches of these frames for each video file. These face snaps or bounding boxes containing only detected faces are then passed through the MesoNet architecture. The final prediction depends on how many positive outputs we get from each batch of extracted faces (after passing every selected frame of that video through the MesoNet architecture). From one video we have to process at least 20 or more frames to get reliable predictions.
 
 Steps to detect a DeepFake in test dataset: 
