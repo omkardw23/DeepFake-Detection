@@ -14,11 +14,13 @@ Kaggle's dataset link :
 
 **https://www.kaggle.com/c/deepfake-detection-challenge/data**
 
-The dataset composed of about : 
+Dataset summary : 
 * Number of training video samples : **401**
 * Number of testing video samples : **400**
 
 Total size ~ 470 GB
+
+![](https://github.com/omkardw23/DeepFake-Detection/blob/master/Images%20for%20readme/Deepfake%20Detection%20Challenge%20-%20Kaggle.mp4)
 
 (I) General-Image-Processing module : 
 ------------------------------------------
